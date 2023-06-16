@@ -1,0 +1,11 @@
+<!-- I want this page to look the same as 'https://finance.cs50.net/quote' -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <!-- A share of AAPL (AAPL) costs $183.04. -->
+    A share of {{ ticker.name }} ({{ ticker.name }}) costs {{ usd(ticker.price) }}
+{% endblock %}

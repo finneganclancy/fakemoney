@@ -1,0 +1,11 @@
+Our transaction database will be related to our finance database through the user id
+
+In our transaction database, we want:
+    - Transaction id
+    - User ID [foreign key]
+    - Stock name
+    - Amount of Shares
+    - Price of each stock
+    - Type (bought or sold)
+    - Symbol
+    - Time

@@ -1,0 +1,15 @@
+<!-- Want this to look the same as the login page/https://finance.cs50.net/buy -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Funds
+{% endblock %}
+
+{% block main %}
+    <form action="/add_funds" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" min="0" autofocus name="new_cash" autocomplete="off" placeholder="Add funds" type="number" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+{% endblock %}

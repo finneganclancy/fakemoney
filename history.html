@@ -1,0 +1,33 @@
+<!-- I want this page to look the same as 'https://finance.cs50.net/' -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Transactions
+{% endblock %}
+
+{% block main %}
+<!-- Bootstrap is connected to our layout.html -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Type</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for transaction in transactions %}
+        <tr>
+            <td> {{ transaction["symbol"] }} </td>
+            <td> {{ transaction["type"] }} </td>
+            <td> {{ transaction["shares"] }} </td>
+            <td> ${{ transaction["price"] }} </td>
+            <td> {{ transaction["timestamp"] }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

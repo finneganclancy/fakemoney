@@ -1,0 +1,28 @@
+<!-- From SPECIFICATION/Register - "Odds are you’ll want to create a new template (e.g., register.html) that’s quite similar to login.html."  -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <div id="error"></div>
+    <!-- We're going to send the data to the register route, not login. -->
+    <form action="/register" method="post" id="form">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" minlength="8">
+        </div>
+        <!-- We have to add a box to 'confirm password' -->
+        <!-- 'implemented as a text field whose name is confirmation' -->
+        <!-- Placeholder is the same as 'https://finance.cs50.net/register' -->
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder="Password (again)" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+
+{% endblock %}

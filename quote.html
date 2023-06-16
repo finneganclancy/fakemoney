@@ -1,0 +1,19 @@
+<!-- This will be a form also so we will use a simialar layout as we did with register -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <!-- We're going to send the data to the register route, not login. -->
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <!-- Require that a user input a stock’s symbol, implemented as a text field whose name is symbol. -->
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
+            <!-- Add a button that says Quote like 'https://finance.cs50.net/quote' -->
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+
+    </form>
+{% endblock %}

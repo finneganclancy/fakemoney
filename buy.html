@@ -1,0 +1,18 @@
+<!-- Want this to look the same as the login page/https://finance.cs50.net/buy -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="symbol" placeholder="Symbol" type="text" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="shares" placeholder="Shares" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!-- Want this to look the same as the login page/https://finance.cs50.net/buy -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="mb-3">
+            <!-- # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol. -->
+            <select name="symbol">
+                <!-- We want to iterate through each one of the symbols the user owns and have an option for them to click on it to sell -->
+                {% for symbol in symbols %}
+                    <option>{{ symbol["symbol"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="shares" placeholder="Shares" type="number" min="1" autocomplete="off" autofocus>
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}

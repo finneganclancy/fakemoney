@@ -1,0 +1,53 @@
+<!-- I want this page to look the same as 'https://finance.cs50.net/' -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<!-- Bootstrap is connected to our layout.html -->
+<table class="table table-striped">
+    <thead>
+        <th>
+            <td></td>
+            <td>Symbol</td>
+            <td>Shares</td>
+            <td>Price</td>
+            <td><strong>TOTAL</strong></td>
+        </th>
+    </thead>
+
+    <tbody>
+        {% for stock in stocks %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td> {{ stock['symbol'] }}</td>
+            <td> {{ stock['allShares'] }}</td>
+            <td> {{ usd(stock['price']) }}</td>
+            <td> {{ usd(stock['allShares'] * stock['price']) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><strong>Cash</strong></td>
+            <td><strong>{{ usd(cash) }}</strong></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><strong>TOTAL</strong></td>
+            <td><strong>{{ total }}</strong></td>
+        </tr>
+    </tfoot>
+</table>
+{% endblock %}
